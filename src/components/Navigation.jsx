@@ -11,7 +11,7 @@ function Navigation() {
       <header className="container">
         <Link to="/" className="logo">
           <img
-            src="https://archives.bulbagarden.net/media/upload/4/4b/Pokédex_logo.png"
+            src="/images/Pokedex_logo.png"
             alt="Logo Pokedex"
           />
         </Link>
