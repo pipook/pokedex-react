@@ -1,19 +1,25 @@
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { PokemonContext } from "../context/PokemonContext";
 
 function Navigation() {
-  const [valueSearch, setValueSearch] = useState()
+  const { valueSearch, onInputChange, onResetForm } =
+    useContext(PokemonContext);
 
-  const onSearchSubmit = () => {}
-  const onInputChange = () => {}
+  const navigate = useNavigate();
+
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate("/search", {
+      state: valueSearch,
+    });
+    onResetForm();
+  };
   return (
     <>
       <header className="container">
         <Link to="/" className="logo">
-          <img
-            src="/images/Pokedex_logo.png"
-            alt="Logo Pokedex"
-          />
+          <img src="/images/Pokedex_logo.png" alt="Logo Pokedex" />
         </Link>
 
         <form onSubmit={onSearchSubmit}>

@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 
 function FilterBar() {
-  const { active } = useContext(PokemonContext);
-  const handleCheckbox = () => {};
+  const { active, handleCheckbox } = useContext(PokemonContext);
   return (
     <div className={`container-filters${active ? " active" : ""}`}>
       <div className="filter-by-type">
